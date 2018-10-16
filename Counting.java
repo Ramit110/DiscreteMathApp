@@ -3,7 +3,7 @@
  * A class containing methods for various counting functions such as permutations, combinations, etc.
  *
  * @author Ravi Ghaghada ravighaghada28@gmail.com
- * 14/10/2018
+ * 16/10/2018
  */
 public class Counting
 {
