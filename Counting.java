@@ -3,43 +3,38 @@
  * A class containing methods for various counting functions such as permutations, combinations, etc.
  *
  * @author Ravi Ghaghada ravighaghada28@gmail.com
- * 16/10/2018
+ * @author Ramit110
+ * @version 4/12/2018
  */
 public class Counting
 {
     /* 
-        A method that detects whether a given number is negative or not
+        A method that detects whether a given number is negative or not.
+        Returns false if the number is null.
     */
-    private static boolean isNegative(int x, String methodname)
+    private static boolean isNegative(int x)
     {
-        try{
-            if (x<0)
-            {
-                throw new IllegalArgumentException("Error: Non-negative integer used in method " + methodname);
-            }
+        if(x == null)
+        {
             return false;
         }
-        catch (IllegalArgumentException e)
+        else if (x<0)
         {
-            System.out.println(e);
             return true;
         }
-
+        return false;
     }
 
     /*
-        A method that returns the factorial of a number x
+        A method that returns the factorial of a number x.
+        Will crash if x is greater than 2048.
     */
     public static int factorial(int x)
     {
-        if (isNegative(x, "factorial"))
-        {
-            System.exit(-1);
+        if (isNegative(x))
             return -1;
-        }
         else if (x==1 || x==0)
             return x;
-
         else
             return x*factorial(x-1);
     }
