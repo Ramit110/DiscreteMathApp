@@ -18,16 +18,12 @@ public class Counting
         {
             return false;
         }
-        else if (x<0)
-        {
-            return true;
-        }
-        return false;
+        return (x < 0);
     }
 
     /*
         A method that returns the factorial of a number x.
-        Will crash if x is greater than 2048.
+        Will crash if x is greater than the stack size limit of Java.
     */
     public static int factorial(int x)
     {
@@ -41,11 +37,11 @@ public class Counting
     
     /*
         A method that obtains the number of r-permutations of a set with n elements 
-        based on whether repititions are allowed or not
+        based on whether repititions are allowed or not.
     */
     public static int permute(int n, int r, boolean repititionsAllowed)
     {
-        if (!isNegative(n, "permute") && !isNegative(r, "permute"))
+        if (!isNegative(n) && !isNegative(r))
             if (n>r && !repititionsAllowed)
                 return factorial(n)/factorial(n-r);
             else if (n>r && repititionsAllowed)
